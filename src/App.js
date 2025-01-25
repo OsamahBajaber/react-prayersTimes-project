@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Header";
 import TimesList from "./TimesList";
@@ -12,7 +11,6 @@ function App() {
         height: "100vh",
         fontFamily: "alexandria",
         direction: "rtl",
-        // backgroundColor: "#311b92",
       }}
     >
       <Header />

@@ -27,8 +27,6 @@ export const fetchAthan = createAsyncThunk(
     };
 
     console.log(response.data);
-    // date.innerHTML = `${response.data.data.date.hijri.weekday.ar} - ${response.data.data.date.gregorian.date}`;
-    // response.data.data.date.gregorian.date;
     return {
       date,
       prayers,
@@ -55,7 +53,6 @@ export const athanSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchAthan.fulfilled, (state, action) => {
-        //   state.city = action.payload.city;
         state.date = action.payload.date;
         state.prayers = action.payload.prayers;
         state.isLoading = false;
