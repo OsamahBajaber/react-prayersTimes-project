@@ -4,11 +4,9 @@ import Typography from "@mui/material/Typography";
 import { Stack } from "@mui/material";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAthan, changeCity } from "./athanSlice";
+import { fetchAthan } from "./athanSlice";
 
 export default function Times() {
-  //   console.log(axios);
-
   const dispatch = useDispatch();
   const { city, prayers } = useSelector((state) => state.athanApi);
   useEffect(() => {
