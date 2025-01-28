@@ -3,11 +3,18 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { fetchAthan } from "./athanSlice";
 
 export default function Times({ name }) {
   const dispatch = useDispatch();
   const { city, prayers } = useSelector((state) => state.athanApi);
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage("ar");
+  }, []);
+
   useEffect(() => {
     dispatch(fetchAthan(city));
   }, [dispatch, city]);
@@ -30,7 +37,7 @@ export default function Times({ name }) {
             background: "linear-gradient(to right, #472dbc,rgb(118, 91, 238))",
           }}
         >
-          <h4 className="prayer-name">{name}</h4>
+          <h4 className="prayer-name">{t(name)}</h4>
         </div>
         <CardContent
           style={{

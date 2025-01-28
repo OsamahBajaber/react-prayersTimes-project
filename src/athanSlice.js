@@ -4,7 +4,6 @@ import axios from "axios";
 export const fetchAthan = createAsyncThunk(
   "athanApi/fetchAthan",
   async (city) => {
-    console.log("calling fetch athan");
     const response = await axios.get(
       "https://api.aladhan.com/v1/timingsByCity",
       {
@@ -25,8 +24,6 @@ export const fetchAthan = createAsyncThunk(
       maghrib: response.data.data.timings.Maghrib,
       isha: response.data.data.timings.Isha,
     };
-
-    console.log(response.data);
     return {
       date,
       prayers,
@@ -37,7 +34,7 @@ export const fetchAthan = createAsyncThunk(
 export const athanSlice = createSlice({
   name: "athanApi",
   initialState: {
-    city: "Mecca",
+    city: "مكة المكرمة",
     date: "",
     prayers: {},
     isLoading: false,
